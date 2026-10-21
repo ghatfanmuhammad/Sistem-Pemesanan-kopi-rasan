@@ -1,0 +1,117 @@
+/* Kopi Rasan: design tokens – forest-green × warm-cream premium theme */
+
+:root {
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* ---- latar belakang ---- */
+  --bg:        #F5F0E8;
+  --surface:   #FFFFFF;
+  --surface-2: #EDE8DF;
+  --line:      #E4DBCC;
+  --ink:       #1A1C18;
+  --muted:     #78756C;
+
+  /* ---- merek ---- */
+  --brand:     #1F5A44;
+  --brand-mid: #2E7A5C;
+  --brand-bg:  #E6F2ED;
+  --on-brand:  #FFFFFF;
+
+  /* ---- hero (banner gelap) ---- */
+  --hero:          #1A3D2C;
+  --hero-2:        rgba(255,255,255,.13);
+  --on-hero:       #FFFFFF;
+  --on-hero-muted: rgba(255,255,255,.62);
+
+  /* ---- aksen & utilitas ---- */
+  --caramel:    #C8742B;
+  --on-caramel: #1A1C18;
+  --art-bg:     #EBF4EF;
+  --danger:     #B02820;
+  --focus:      #1F5A44;
+
+  /* ---- bayangan ---- */
+  --shadow:      0 4px 20px rgba(16,28,22,.12);
+  --shadow-card: 0 2px 12px rgba(16,28,22,.07);
+
+  /* ---- status pesanan ---- */
+  --st-waiting-bg:   #FBF0D2; --st-waiting-fg:   #6B4306;
+  --st-paid-bg:      #E6F2ED; --st-paid-fg:      #1A5235;
+  --st-preparing-bg: #EAF0FB; --st-preparing-fg: #1C3E8A;
+  --st-ready-bg:     #E6F2ED; --st-ready-fg:     #1A5235;
+  --st-done-bg:      #EDEBE4; --st-done-fg:      #5A5650;
+  --st-cancelled-bg: #F7DCDA; --st-cancelled-fg: #8E1F18;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #0F1410;
+    --surface:   #191E1A;
+    --surface-2: #222820;
+    --line:      #2D3830;
+    --ink:       #EAE8E2;
+    --muted:     #A4A89E;
+
+    --brand:     #5FBA8E;
+    --brand-mid: #4DA07A;
+    --brand-bg:  #1A3028;
+    --on-brand:  #0A1C14;
+
+    --hero:          #0D1F16;
+    --hero-2:        rgba(255,255,255,.10);
+    --on-hero:       #EAE8E2;
+    --on-hero-muted: rgba(234,232,226,.58);
+
+    --caramel:  #E09040;
+    --art-bg:   #1A3028;
+    --danger:   #FF9A92;
+    --focus:    #5FBA8E;
+
+    --shadow:      0 4px 20px rgba(0,0,0,.45);
+    --shadow-card: 0 2px 12px rgba(0,0,0,.30);
+
+    --st-waiting-bg:   #4A3510; --st-waiting-fg:   #F5D48A;
+    --st-paid-bg:      #1B4030; --st-paid-fg:      #A8E0C0;
+    --st-preparing-bg: #1B3550; --st-preparing-fg: #A9CFF5;
+    --st-ready-bg:     #1B4030; --st-ready-fg:     #A8E0C0;
+    --st-done-bg:      #222820; --st-done-fg:      #A4A89E;
+    --st-cancelled-bg: #4D1F1B; --st-cancelled-fg: #FFB3AC;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg:        #0F1410;
+  --surface:   #191E1A;
+  --surface-2: #222820;
+  --line:      #2D3830;
+  --ink:       #EAE8E2;
+  --muted:     #A4A89E;
+
+  --brand:     #5FBA8E;
+  --brand-mid: #4DA07A;
+  --brand-bg:  #1A3028;
+  --on-brand:  #0A1C14;
+
+  --hero:          #0D1F16;
+  --hero-2:        rgba(255,255,255,.10);
+  --on-hero:       #EAE8E2;
+  --on-hero-muted: rgba(234,232,226,.58);
+
+  --caramel:  #E09040;
+  --art-bg:   #1A3028;
+  --danger:   #FF9A92;
+  --focus:    #5FBA8E;
+
+  --shadow:      0 4px 20px rgba(0,0,0,.45);
+  --shadow-card: 0 2px 12px rgba(0,0,0,.30);
+
+  --st-waiting-bg:   #4A3510; --st-waiting-fg:   #F5D48A;
+  --st-paid-bg:      #1B4030; --st-paid-fg:      #A8E0C0;
+  --st-preparing-bg: #1B3550; --st-preparing-fg: #A9CFF5;
+  --st-ready-bg:     #1B4030; --st-ready-fg:     #A8E0C0;
+  --st-done-bg:      #222820; --st-done-fg:      #A4A89E;
+  --st-cancelled-bg: #4D1F1B; --st-cancelled-fg: #FFB3AC;
+  color-scheme: dark;
+}

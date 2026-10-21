@@ -1,0 +1,424 @@
+/* Kopi Rasan – customer UI: premium coffee-app redesign */
+
+/* ========== foto produk ========== */
+.art-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block; border-radius: inherit;
+}
+.art-photo--hero { border-radius: 50%; object-fit: cover; }
+.brand__mark--logo { overflow: hidden; background: transparent; }
+.logo-img {
+  width: 40px; height: 40px;
+  border-radius: 50%; object-fit: cover; display: block;
+}
+
+/* ========== layout dasar ========== */
+.app {
+  position: relative; max-width: 480px; min-height: 100vh;
+  margin: 0 auto; background: var(--bg); display: flex; flex-direction: column;
+}
+@media (min-width: 520px) {
+  .app { box-shadow: 0 0 0 1px var(--line), var(--shadow); }
+}
+.boot { padding: 48px 20px; text-align: center; color: var(--muted); }
+
+/* ========== beranda: header atas ========== */
+.home-top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-block: 22px 16px;
+}
+.brand          { display: flex; align-items: center; gap: 10px; }
+.brand__name    { font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+.order-badge {
+  display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px;
+  border-radius: 18px; background: var(--brand-bg); color: var(--brand);
+  font-size: 13px; font-weight: 600; border: 0; white-space: nowrap;
+}
+
+/* ========== hero banner (kartu gelap) ========== */
+.hero-banner { padding-block: 0 22px; }
+.hero-banner__inner {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--hero); border-radius: 28px;
+  padding: 26px 20px 26px 26px; min-height: 190px;
+  overflow: hidden; position: relative;
+}
+/* titik-titik dekoratif di kanan atas */
+.hero-banner__inner::before {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: rgba(255,255,255,.04); pointer-events: none;
+}
+.hero-banner__text { flex: 1; min-width: 0; }
+.hero-banner__text h1 {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 700;
+  color: var(--on-hero); line-height: 1.12;
+}
+.hero-banner__text p {
+  margin-top: 8px; font-size: 13px;
+  color: var(--on-hero-muted); max-width: 22ch;
+}
+.btn--hero {
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-top: 18px; background: #FFFFFF; color: var(--brand);
+  min-height: 44px; padding: 0 22px;
+  font-size: 14px; font-weight: 700; border: 0;
+  border-radius: 22px; letter-spacing: .01em;
+  transition: background .15s;
+}
+.btn--hero:hover { background: var(--brand-bg); }
+.hero-banner__img {
+  flex: none; width: 114px; height: 114px;
+  border-radius: 50%; overflow: hidden;
+  border: 3px solid rgba(255,255,255,.18); flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ========== secthead ========== */
+.secthead {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding-block: 20px 12px;
+}
+.secthead h2 { font-size: 20px; font-weight: 700; }
+.link {
+  min-height: 44px; padding: 0 4px; border: 0; background: none;
+  color: var(--brand); font-size: 14px; font-weight: 600;
+}
+
+/* ========== favorit (horizontal scroll) ========== */
+.favs-wrap {
+  overflow-x: auto; padding: 4px 20px 22px;
+  scrollbar-width: none;
+}
+.favs-wrap::-webkit-scrollbar { display: none; }
+.favs { display: flex; gap: 14px; }
+
+.fav {
+  flex: none; width: 152px;
+  display: flex; flex-direction: column;
+  background: var(--surface); border: 0;
+  border-radius: 22px; overflow: hidden;
+  box-shadow: var(--shadow-card);
+  text-align: left; transition: transform .15s, box-shadow .15s;
+}
+.fav:hover:not(:disabled) { transform: translateY(-2px); box-shadow: var(--shadow); }
+.fav:disabled { opacity: .6; cursor: not-allowed; }
+.fav .art {
+  width: 152px; height: 124px;
+  border-radius: 0; background: var(--surface-2);
+  flex: none; display: block; overflow: hidden;
+}
+.fav__info    { padding: 11px 13px 13px; }
+.fav__name    { font-weight: 700; font-size: 14px; line-height: 1.3; color: var(--ink); }
+.fav__row     { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+.fav__price   { font-weight: 700; font-size: 14px; color: var(--brand); }
+
+/* tombol + hijau bulat */
+.add {
+  flex: none; width: 34px; height: 34px;
+  border-radius: 11px; background: var(--brand); color: var(--on-brand);
+  display: flex; align-items: center; justify-content: center;
+}
+.add svg { width: 18px; height: 18px; }
+
+/* ========== foot note ========== */
+.foot-note { padding-block: 18px 32px; text-align: center; font-size: 12px; color: var(--muted); }
+.foot-note a { color: var(--muted); }
+
+/* ========== menu: header ========== */
+.mhead { padding-block: 22px 0; }
+.mhead h1 { font-size: 30px; line-height: 1.1; font-weight: 700; }
+
+/* Search bar */
+.search-wrap { margin-top: 14px; position: relative; }
+.search-icon {
+  position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+  color: var(--muted); pointer-events: none;
+}
+.search-icon svg { width: 18px; height: 18px; display: block; }
+.search-input {
+  display: block; width: 100%; height: 50px;
+  padding: 0 44px 0 44px;
+  border: 1.5px solid var(--line); border-radius: 16px;
+  background: var(--surface); color: var(--ink);
+  font-family: var(--font-body); font-size: 14px;
+  transition: border-color .15s;
+}
+.search-input:focus { outline: none; border-color: var(--brand); }
+.search-input::placeholder { color: var(--muted); }
+
+/* Toggle dine-in / takeaway */
+.seg { display: flex; gap: 4px; padding: 4px; border-radius: 15px; background: var(--surface-2); margin-top: 14px; }
+.seg button {
+  flex: 1; min-height: 44px; border: 0; border-radius: 11px;
+  background: transparent; color: var(--muted); font-weight: 500; font-size: 14px;
+  transition: background .15s, color .15s, box-shadow .15s;
+}
+.seg button[aria-pressed="true"] {
+  background: var(--surface); color: var(--ink);
+  font-weight: 700; box-shadow: var(--shadow-card);
+}
+
+/* Chips kategori */
+.chips {
+  display: flex; gap: 8px; overflow-x: auto;
+  padding-block: 16px 4px; scrollbar-width: none;
+}
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; min-height: 40px; padding: 0 18px;
+  border-radius: 20px; border: 1.5px solid var(--line);
+  background: var(--surface); font-weight: 500; font-size: 14px; color: var(--muted);
+  transition: background .15s, border-color .15s, color .15s;
+}
+.chip[aria-pressed="true"] {
+  background: var(--brand); border-color: var(--brand);
+  color: var(--on-brand); font-weight: 700;
+}
+
+/* Daftar menu */
+.menu { display: flex; flex-direction: column; gap: 12px; padding-block: 14px 28px; }
+.prow {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  padding: 12px 14px 12px 12px; text-align: left;
+  background: var(--surface); border: 0;
+  border-radius: 22px; box-shadow: var(--shadow-card);
+  transition: transform .15s, box-shadow .15s;
+}
+.prow:hover:not(:disabled) { transform: translateY(-1px); box-shadow: var(--shadow); }
+.prow:disabled { opacity: .6; cursor: not-allowed; }
+.prow .art {
+  flex: none; width: 84px; height: 84px;
+  border-radius: 18px; background: var(--surface-2); overflow: hidden;
+}
+.prow__body    { flex: 1; min-width: 0; }
+.prow__name    { font-weight: 700; font-size: 15px; line-height: 1.3; color: var(--ink); }
+.prow__desc    { margin-top: 3px; font-size: 12px; color: var(--muted); line-height: 1.4; }
+.prow__price   { margin-top: 7px; font-weight: 700; font-size: 15px; color: var(--brand); }
+.prow .add     { width: 38px; height: 38px; border-radius: 13px; }
+
+/* ========== dock & navigasi bawah ========== */
+.dock { position: sticky; bottom: 0; z-index: 5; margin-top: auto; }
+.dock__float {
+  padding-top: 8px; padding-bottom: 10px;
+  background: linear-gradient(to top, var(--bg) 65%, transparent);
+}
+.floatbar__btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  width: 100%; min-height: 60px; padding: 0 22px; border: 0; border-radius: 22px;
+  background: var(--brand); color: var(--on-brand);
+  font-weight: 700; font-size: 15px;
+  box-shadow: 0 8px 28px rgba(31,90,68,.38);
+}
+.floatbar__btn strong { font-size: 17px; }
+
+.nav {
+  display: flex; background: var(--surface); border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.nav button {
+  flex: 1; min-height: 66px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  border: 0; background: none; color: var(--muted);
+  font-size: 11px; font-weight: 500; transition: color .15s;
+}
+.nav svg { width: 24px; height: 24px; }
+.nav button[aria-current="page"] { color: var(--brand); font-weight: 700; }
+.nav__dot { position: relative; display: inline-flex; }
+.nav__dot::after {
+  content: ""; position: absolute; top: -1px; right: -4px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--caramel); border: 2px solid var(--surface);
+}
+
+/* ========== bar bawah (keranjang, bayar) ========== */
+.bar {
+  position: sticky; bottom: 0; z-index: 5;
+  background: var(--surface); border-top: 1px solid var(--line);
+  padding-top: 14px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+}
+.bar__row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.bar__label { font-size: 14px; color: var(--muted); }
+.bar__total  { font-weight: 700; font-size: 26px; color: var(--ink); }
+.bar__help   { margin-top: 10px; font-size: 12px; text-align: center; color: var(--muted); }
+
+/* ========== topbar (halaman dengan judul + back) ========== */
+.topbar { display: flex; align-items: center; gap: 12px; padding-block: 22px 0; }
+.topbar h1 { font-size: 26px; line-height: 1.1; font-weight: 700; }
+.topbar__sub { font-size: 13px; color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 14px; padding-block: 18px 28px; }
+
+/* ========== kartu ========== */
+.card {
+  padding: 16px 16px; border-radius: 22px;
+  background: var(--surface); box-shadow: var(--shadow-card);
+}
+.sumrow { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
+.sumrow + .sumrow { margin-top: 8px; }
+.sumrow--total {
+  align-items: baseline; margin-top: 12px;
+  padding-top: 12px; border-top: 1px solid var(--line);
+}
+.sumrow--total strong { font-weight: 700; font-size: 22px; color: var(--brand); }
+.opt { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* ========== keranjang ========== */
+.cline {
+  display: flex; gap: 14px; padding: 14px;
+  border-radius: 22px; background: var(--surface); box-shadow: var(--shadow-card);
+}
+.cline .art { flex: none; width: 74px; height: 74px; border-radius: 16px; background: var(--surface-2); overflow: hidden; }
+.cline__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.cline__name { font-weight: 700; font-size: 15px; line-height: 1.3; }
+.cline__meta { font-size: 12px; color: var(--muted); }
+.cline__warn { font-size: 12px; font-weight: 600; color: var(--danger); }
+.cline__row  { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+
+.stepper { display: inline-flex; align-items: center; border-radius: 13px; background: var(--surface-2); }
+.stepper button {
+  width: 42px; height: 42px; border: 0; background: transparent;
+  display: flex; align-items: center; justify-content: center;
+}
+.stepper svg { width: 16px; height: 16px; }
+.stepper output { min-width: 28px; text-align: center; font-weight: 700; font-size: 15px; }
+
+.addmore {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; font-weight: 700; font-size: 14px;
+  color: var(--brand); background: none; border: 0; padding: 0;
+}
+.addmore svg { width: 16px; height: 16px; }
+
+.empty {
+  padding: 60px 20px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 16px; color: var(--muted);
+}
+.empty h2 { color: var(--ink); font-size: 24px; }
+
+/* ========== sheet (bottom drawer) ========== */
+dialog.sheet {
+  width: 100%; max-width: 480px; margin: auto auto 0; padding: 0; border: 0;
+  border-radius: 28px 28px 0 0; background: var(--surface); color: var(--ink);
+  max-height: 92vh; overflow: auto;
+}
+dialog.sheet::backdrop { background: rgba(10,18,13,.60); }
+.sheet__head {
+  display: flex; gap: 14px; align-items: flex-start; padding: 20px 16px 10px;
+}
+.sheet__head .art {
+  flex: none; width: 92px; height: 92px;
+  border-radius: 20px; background: var(--surface-2); overflow: hidden;
+}
+.sheet__title { font-size: 22px; font-weight: 700; line-height: 1.15; }
+.sheet__desc  { margin-top: 4px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+.sheet__close { margin-left: auto; align-self: flex-start; }
+.sheet__body  { display: flex; flex-direction: column; gap: 20px; padding: 14px 16px 10px; }
+.sheet__foot  {
+  position: sticky; bottom: 0;
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+  background: var(--surface); border-top: 1px solid var(--line);
+}
+.sheet__foot .btn { flex: 1; }
+
+/* Pilih opsi gula/es */
+.pills { display: flex; flex-wrap: wrap; gap: 8px; border: 0; margin: 0; padding: 0; min-width: 0; }
+.pills legend {
+  padding: 0; margin-bottom: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.pill { position: relative; }
+.pill input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.pill span {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px;
+  border-radius: 22px; border: 1.5px solid var(--line);
+  background: var(--surface); font-weight: 500; font-size: 14px;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.pill input:checked + span { background: var(--brand); border-color: var(--brand); color: var(--on-brand); font-weight: 700; }
+.pill input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* ========== pembayaran ========== */
+.paycard {
+  position: relative; overflow: hidden; padding: 22px 22px;
+  border-radius: 26px; background: var(--hero); color: var(--on-hero);
+}
+.paycard::after {
+  content: '';
+  position: absolute; bottom: -40px; right: -40px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: rgba(255,255,255,.05); pointer-events: none;
+}
+.paycard__label { font-size: 13px; color: var(--on-hero-muted); }
+.paycard__total { font-weight: 700; font-size: 40px; line-height: 1.15; letter-spacing: -.02em; }
+.paycard__meta  { font-size: 13px; color: var(--on-hero-muted); margin-top: 4px; }
+
+.methods { display: flex; flex-direction: column; gap: 10px; border: 0; margin: 0; padding: 0; min-width: 0; }
+.method { border-radius: 20px; background: var(--surface); border: 1.5px solid var(--line); overflow: hidden; box-shadow: var(--shadow-card); }
+.method--on { border-color: var(--brand); border-width: 2px; }
+.method label { display: flex; align-items: center; gap: 14px; padding: 14px 16px; min-height: 44px; cursor: pointer; }
+.method__icon {
+  flex: none; width: 46px; height: 46px; border-radius: 14px;
+  background: var(--brand-bg); color: var(--brand);
+  display: flex; align-items: center; justify-content: center;
+}
+.method__icon svg { width: 22px; height: 22px; }
+.method__text { flex: 1; min-width: 0; }
+.method__text strong { display: block; font-size: 15px; font-weight: 700; }
+.method__text span   { display: block; font-size: 12px; color: var(--muted); }
+.method input { flex: none; width: 22px; height: 22px; margin: 0; accent-color: var(--brand); }
+
+.qr { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 4px 14px 16px; }
+.qr__box { padding: 10px; border-radius: 16px; background: #FFFFFF; border: 1px solid var(--line); }
+.qr__box svg { display: block; width: 150px; height: 150px; }
+.qr__note { font-size: 12px; color: var(--muted); text-align: center; }
+
+.notice { padding: 11px 14px; border-radius: 14px; background: var(--st-waiting-bg); color: var(--st-waiting-fg); font-size: 13px; }
+.alert  { padding: 11px 14px; border-radius: 14px; background: var(--st-cancelled-bg); color: var(--st-cancelled-fg); font-size: 13px; font-weight: 500; }
+
+/* ========== status pesanan ========== */
+.shero {
+  position: relative; overflow: hidden;
+  background: var(--surface); color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 0 32px 32px; padding-block: 24px 28px;
+}
+.shero__tag {
+  display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px;
+  border-radius: 16px; background: var(--brand-bg); color: var(--brand);
+  font-size: 13px; font-weight: 600;
+}
+.shero__row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; }
+.shero h1 { font-size: 30px; line-height: 1.1; font-weight: 700; }
+.shero p  { margin-top: 6px; font-size: 14px; color: var(--muted); }
+.shero__art {
+  flex: none; width: 84px; height: 84px; border-radius: 50%;
+  background: var(--art-bg); display: flex; align-items: center; justify-content: center;
+}
+.shero__art svg { width: 62px; height: 62px; }
+
+/* Timeline */
+.timeline { padding: 16px 16px 4px; }
+.tl { display: flex; gap: 14px; }
+.tl__rail { display: flex; flex-direction: column; align-items: center; }
+.tl__dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--surface-2); display: flex; align-items: center; justify-content: center;
+}
+.tl__dot svg { width: 16px; height: 16px; }
+.tl--done .tl__dot { background: var(--brand); color: var(--on-brand); }
+.tl--now  .tl__dot { background: var(--surface); border: 3px solid var(--brand); }
+.tl--now  .tl__dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
+.tl__line { width: 2px; height: 28px; background: var(--line); }
+.tl--done .tl__line { background: var(--brand); }
+.tl__text { padding-bottom: 12px; }
+.tl__text strong { display: block; font-size: 15px; font-weight: 600; }
+.tl--todo .tl__text strong { color: var(--muted); font-weight: 500; }
+.tl__text span { font-size: 12px; color: var(--muted); }
+.tl:last-child .tl__text { padding-bottom: 16px; }
